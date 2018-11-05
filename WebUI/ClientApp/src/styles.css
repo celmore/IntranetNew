@@ -1,0 +1,177 @@
+/* You can add global styles to this file, and also import other style files */
+/*#body-content {
+  min-height: 40vh;
+  padding-bottom: 10px;
+
+}*/
+
+
+.lspace {
+  height: 100%;
+  width: calc(15vw - 20px);
+  display: inline-block;
+}
+
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer
+{
+  display:block;
+}
+
+.footer img {
+  max-width: 125px;
+  padding: 2px;
+}
+
+@media screen and (max-width: 450px) {
+  header {
+    margin-left: 15vw;
+    min-width: 50vw;
+    height: 145px;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: inline-block;
+  }
+
+  #body-content {
+    padding-bottom: 10px;
+    margin-left: 66px;
+    margin-top: 350px;
+  }
+
+  .footer {
+    margin-bottom: 10px;
+    padding-top: 20px;
+  }
+
+    .footer img {
+      max-width: 11vw;
+      padding: 2px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+  .page-header {
+    margin-left: 13vw;
+    height: 145px;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: inline-block;
+  }
+
+
+  .body-content {
+    padding-bottom: 5px;
+    margin-left: 8vw;
+    margin-top: 30px;
+  }
+
+  .footer {
+    margin-left: 15vw;
+    min-width: 900px;
+    padding-top: 20px;
+    max-width: 1260px;
+  }
+
+
+    .footer img {
+      max-width: 11vw;
+      padding: 2px;
+    }
+}
+
+@media screen and (min-width: 902px) {
+
+  .page-header {
+    margin-left: 15vw;
+    min-width: 50vw;
+    height: 145px;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: inline-block;
+
+  }
+
+
+  .body-content {
+    padding-bottom: 10px;
+    margin-left: calc(11vw - 20px);
+    margin-top: 20px;
+  }
+
+  .footer {
+    margin-left: 15vw;
+    min-width: 900px;
+    padding-top: 20px;
+    max-width: 1260px;
+  }
+
+
+    .footer img {
+      max-width: 125px;
+      padding: 2px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .page-header {
+    margin-left: 15vw;
+    min-width: 50vw;
+    height: 145px;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: inline-block;
+    width: 75%;
+  }
+
+
+  .body-content {
+    width: 1190px;
+    padding-bottom: 10px;
+    margin-left: calc(16vw - 20px);
+    margin-top: 30px;
+  }
+
+  .footer {
+    margin-left: 15vw;
+    min-width: 900px;
+    padding-top: 20px;
+    max-width: 1180px;
+  }
+
+
+    .footer img {
+      max-width: 125px;
+      padding: 2px;
+    }
+}
+
+
+/**********************set style by Id**********************/
+
+#well
+{
+  padding-bottom: 25px;
+}
+
+#carl {
+  width:85%;
+  display: inline-block;
+}
+
+

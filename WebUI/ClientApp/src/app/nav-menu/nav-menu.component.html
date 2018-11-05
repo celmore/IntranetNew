@@ -1,0 +1,65 @@
+<div class='main-nav'>
+  <div class='navbar navbar-inverse'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' [routerLink]='["/home"]'>AERO</a>
+    </div>
+    <div class='clearfix'></div>
+    <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
+      <ul class='nav navbar-nav'>
+        <li [routerLinkActive]="['link-active']">
+          <a [routerLink]="['/home']">
+            <span class='glyphicon glyphicon-dashboard'></span> Home
+          </a>
+        </li>
+        <li [routerLinkActive]="['link-active']">
+          <a [routerLink]="['/aviationrelatedmfrs']">
+            <span class='glyphicon glyphicon-education'></span> Aviation Related Mfrs
+          </a>
+        </li>
+        <li [routerLinkActive]="['link-active']">
+          <a [routerLink]="['/AviationRelatedPubs']">
+            <span class='glyphicon glyphicon-book'></span> Aviation Related Pubs
+          </a>
+        </li>
+        <li [routerLinkActive]="['link-active']">
+          <a [routerLink]="['/AirwayBillTracker']">
+            <span class='glyphicon glyphicon-map-marker'></span> Airway bill tracking
+          </a>
+        </li>
+        <li [routerLinkActive]="['link-active']">
+          <a [routerLink]="['/reports']" title="Custom Reports">
+            <span class='glyphicon glyphicon-record'></span> Reports
+          </a>
+        </li>
+        <li [routerLinkActive]="['link-active']">
+          <a [routerLink]="['/GeneralRef']">
+            <span class='glyphicon glyphicon-globe'></span> General References
+          </a>
+        </li>
+        <li [routerLinkActive]="['link-active']">
+          <a [routerLink]="['/OtherResources']">
+            <span class='glyphicon glyphicon-th-list'></span> Other Resources
+          </a>
+        </li>
+        <li [routerLinkActive]="['link-active']">
+          <a [routerLink]="['/TravelHelp']">
+            <span class='glyphicon glyphicon-plane'></span> Travel Help
+          </a>
+        </li>
+        <li [routerLinkActive]="['link-active']">
+          <a [routerLink]="['/dictionary']">
+            <span class='glyphicon glyphicon-open-file'></span> Dictionary etc.
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,187 @@
+<!--<div>
+  <span [innerHTML]="Articles.Article"></span>
+
+</div>-->
+<script type="text/javascript">
+  CenterWindow(window, 100);
+
+  function ILSSubmit(No) {
+    ILSWin = self.open("ILSBlank.htm", "ILSMart", "");
+    CenterWindow(ILSWin, 100);
+    document.ILSForm.username.value = ILSUserArray[No];
+    document.ILSForm.password.value = ILSUserArray[No + 1];
+    document.ILSForm.submit()
+  }
+
+  function IPCSubmit(UserId, UserPwd) {
+    ILSWin = self.open("ILSBlank.htm", "ILSMart", "");
+    CenterWindow(ILSWin, 100);
+    document.IPCSearch.Username.value = UserId
+    document.IPCSearch.Password.value = UserPwd
+    document.IPCSearch.submit()
+  }
+
+  function PartsBaseSubmit(UserId, UserPwd) {
+    ILSWin = self.open("ILSBlank.htm", "ILSMart", "");
+    CenterWindow(ILSWin, 100);
+    document.PartsBaseSearch.username.value = UserId
+    document.PartsBaseSearch.password.value = UserPwd
+    document.PartsBaseSearch.submit()
+  }
+
+</script>
+
+<form name="ILSForm" ACTION="https://secure.ilsmart.com/fc/login" METHOD="POST" Target="ILSMart">
+  <input type="hidden" name="startlogin" value="true">
+  <input type="hidden" name="JSEnabled">
+  <input type="hidden" name="VBSEnabled">
+  <input type="hidden" name="Width">
+  <input type="hidden" name="Height">
+  <input type="hidden" name="ColorDepth">
+  <input type="hidden" name="UserAgent">
+  <input type="hidden" name="CookiesEnabled">
+  <input type="hidden" name="url" value="LEGACY">
+  <input type="hidden" name="username">
+  <input type="hidden" name="password">
+  <input type="hidden" name="enter" value="ENTER">
+</form>
+
+<form name="ILSFormx" ACTION="http://phoenix.ilsmart.com/verifpwd.asp?returnTo=http://www.ilsmart.com/ilshome" METHOD="POST" Target="ILSMart">
+  <input type="hidden" name="username">
+  <input type="hidden" name="password">
+  <input type="hidden" name="startlogin" value="true">
+</form>
+
+<form name="IPCSearch" method="post" action="http://www.ipls.com/default.asp?mode=logon" Target="ILSMart">
+  <input type="hidden" name="Username">
+  <input type="hidden" name="Password">
+  <input type="hidden" value="Logon" name="login">
+  <input type="hidden" value="Reset" name="reset">
+</form>
+
+<form name="PartsBaseSearch" method="post" action="http://www.partsbase.com/parts/asp/CheckLogin.asp" Target="ILSMart">
+  <input type="hidden" name="username">
+  <input type="hidden" name="password">
+</form>
+
+<script type="text/javascript">
+  function BuildTable() {
+    alert("Clicked")
+    var i = 0;
+    var n = 0;
+    for (i = 0; i <= ILSUserArray.length - 2; i = i + 5) {
+      n = ((i / 5) + 1);
+      document.write('<tr><td align=right>' + n + '</td>');
+      //    document.write('<td>' + ILSUserArray[i+2] + '</td>');
+      if (ILSUserArray[i + 2] == "UNK") {
+        document.write('<td align=center>(Do not use)</td>');
+      }
+      else {
+        document.write('<td align=center><a href="#" onclick="ILSSubmit(' + i + ')">' + ILSUserArray[i + 3] + '</a></td>');
+      }
+      document.write('<td>' + ILSUserArray[i] + '</td>');
+      document.write('</tr>');
+    }
+  }
+
+  function BuildOtherTable() {
+    var i = 0;
+    var n = 0;
+    for (i = 0; i <= OTHERUserArray.length - 2; i = i + 3) {
+      n = ((i / 3) + 1);
+      document.write('<tr><td align=right>' + n + '</td>');
+
+      document.write('<td align=center><a href="http://www.' + OTHERUserArray[i + 2] + '">' + OTHERUserArray[i + 2] + '</a></td>');
+
+      document.write('<td align=center>' + OTHERUserArray[i + 1] + '</td>');
+      document.write('<td align=center style="width: 100px">' + OTHERUserArray[i] + '</td>');
+      document.write('</tr>');
+    }
+  }
+</script>
+<script type="text/javascript">
+  BuildTable();
+</script>
+
+<div align="center">
+
+
+  <table border="2" style="border-collapse: collapse" cellspacing="0" cellpadding="0" bordercolor="#000080">
+    <tbody>
+      <tr>
+        <td>
+          <table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#000080">
+            <tbody>
+              <tr><th colspan="3"><a href="http://www.ilsmart.com" target="ILSMart">ILSMart.com</a></th></tr>
+
+
+              <tr><td align="right">1</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(0)">Primary, MIS</a></td><td class="secret">3518u01</td></tr>
+              <tr><td align="right">2</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(5)">General (0062)</a></td><td>bazeu01</td></tr>
+              <tr><td align="right">3</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(10)">Sales</a></td><td>b80vu01</td></tr>
+              <tr><td align="right">4</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(15)">Kramer Staples</a></td><td>b80mu01</td></tr>
+              <tr><td align="right">5</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(20)">Robin Edlund</a></td><td>b80lu01</td></tr>
+              <tr><td align="right">6</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(25)">David Stevens</a></td><td>b80su01</td></tr>
+              <tr><td align="right">7</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(30)">Scot Felkins</a></td><td>b80nu01</td></tr>
+              <tr><td align="right">8</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(35)">Trudie Vinson</a></td><td>b80wu01</td></tr>
+              <tr><td align="right">9</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(40)">Steve Ulsberger</a></td><td>b80pu01</td></tr>
+              <tr><td align="right">10</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(45)">Ralph Bodden</a></td><td>b80qu01</td></tr>
+              <tr><td align="right">11</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(50)">Abraham Mathew</a></td><td>b80ku01</td></tr>
+              <tr><td align="right">12</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(55)">Byron Schreiber</a></td><td>b80ru01</td></tr>
+              <tr><td align="right">13</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(60)">Toms John</a></td><td>b80xu01</td></tr>
+              <tr><td align="right">14</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(65)">Sales</a></td><td>b80yu01</td></tr>
+              <tr><td align="right">15</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(70)">John Titus</a></td><td>b80ju01</td></tr>
+              <tr><td align="right">16</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(75)">Taylor Strobeck</a></td><td>b80tu01</td></tr>
+              <tr><td align="right">17</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(80)">Mathew Titus</a></td><td>b80uu01</td></tr>
+              <tr><td align="right">18</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(85)">Joseph Mills</a></td><td>b810u01</td></tr>
+              <tr><td align="right">19</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(90)">Tauese Tupua</a></td><td>bb11u01</td></tr>
+              <tr><td align="right">20</td><td align="center"><a href="https://members.ilsmart.com/" onclick="ILSSubmit(95)">Maintenance Only 0062</a></td><td>0062u01</td></tr>
+
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <table style="border-collapse: collapse" cellspacing="0" cellpadding="0" bordercolor="#000080">
+    <tbody>
+      <tr>
+        <td>
+          <table border="0" class="table">
+            <tbody>
+              <tr><th colspan="4" align="center" class="th">Other</th></tr>
+
+
+              <tr><th></th><th>Web Site</th><th align="center">Username</th><th align="center" style="width: 100px">Password</th></tr>
+              <tr><td>1 </td><td><a href="http://www.Locatory.com" target="_blank">Locatory.com</a></td><td align="center">Richard.Hickson</td><td align="center" style="width: 100px">frlcv7vi</td></tr>
+              <tr><td>2 </td><td><a href="http://www.PartsBase.com" target="_blank">PartsBase.com</a></td><td align="center">R123</td><td align="center" style="width: 100px">password</td></tr>
+              <tr><td>3 </td><td><a href="http://www.One.aero" target="_blank">One.aero</a></td><td align="center">aero_rotmat</td><td align="center" style="width: 100px">FallingWithStyle!@</td></tr>
+              <tr><td>4 </td><td><a href="http://www.the145.com" target="_blank">the145.com</a></td><td align="center">sales@aerocontrols.com</td><td align="center" style="width: 100px">FallingWithStyle1@</td></tr>
+              <tr><td>5 </td><td><a href="http://www.atdb.aero" target="_blank">atdb.aero</a></td><td align="center">aerocontrols</td><td align="center" style="width: 100px">auburn98</td></tr>
+              <tr><td>6 </td><td><a href="http://www.ch-aviation.com" target="_blank">ch-aviation.com</a></td><td align="center">Nick.Henry@aerocontrols.com</td><td align="center" style="width: 100px">NH123</td></tr>
+              <tr><td>7 </td><td><a href="http://www.hightail.com" target="_blank">hightail.com</a></td><td align="center">Richard.hickson@aerocontrols.com</td><td align="center" style="width: 100px">Aeroaero25</td></tr>
+
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+
+  <font size="3" color="#ff0000">
+    For access and password, please contact the <font color="#000000">
+      <b>IT Department</b><font color="#ff0000">
+        . If you contact ILS for tech support(1-800-233-3414), then give the User ID on the right side of your name.<br>
+        WARNING: DO NOT modify the source code of this page. <hr>
+      </font>
+    </font>
+  </font>
+
+</div>
+
+
+<script type="text/javascript">
+  BuildOtherTable();
+</script>

@@ -1,0 +1,15 @@
+function CenterWindow(WinObj,WindowSizeInPercent)
+{
+  WinObj.focus();
+  WinObj.moveTo(screen.availWidth*(100-WindowSizeInPercent)/200,screen.availHeight*(100-WindowSizeInPercent)/200);
+  WinObj.resizeTo(screen.availWidth*WindowSizeInPercent/100,screen.availHeight*WindowSizeInPercent/100);
+}
+function ResizeWindow(WinObj,WindowStartSize, WindowEndSize)
+{
+  for (var i=WindowStartSize; i < WindowEndSize; i=i+3) 
+  {
+    CenterWindow(WinObj,i);
+  }
+  CenterWindow(WinObj,WindowEndSize);
+
+}

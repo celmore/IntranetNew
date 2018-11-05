@@ -1,0 +1,29 @@
+var User;
+var LogFileDir="\\aci-cluster\\vol1\\shared\\MIS\\GENERAL\\LOGS\\"
+
+function LogFileProcess(LogFilePath, RecordNo, Remark)
+{
+// LogFileProcessWin=self.open('http://10.0.0.5/cgi-bin/hitcount.exe?LogPath=' + LogFileDir + LogFilePath + '&RecordNo=' + RecordNo + '&User=' + User + '&Remark=' + Remark ,'','scrollbars=no,status=no,width=30,height=30');
+ LogFileProcessWin=window.open("");
+ LogFileProcessWin.document.write('<img src="http://10.0.0.5/cgi-bin/hitcount.exe?LogPath=' + LogFileDir + LogFilePath + '&RecordNo=' + RecordNo + '&User=' + User + '&Remark=' + Remark + '">');
+ alert(LogFileProcessWin.document.images[0].complete);
+ alert(LogFileProcessWin.document.images[0].complete);
+ alert(LogFileProcessWin.document.images[0].complete);
+// LogFileProcessWin.blur();
+// LogFileProcessWin.write(LogFileProcessWin.images[0].complete);
+// setTimeout("LogFileProcessWin.close();", 5*1000);
+// LogFileProcessWin.close();
+}
+
+// LogFileProcess2('MIS-TEST','1','Remark Data is given below');
+function LogFileProcess2(LogFilePath, RecordNo, Remark)
+{
+  
+  document.write('<img src="http://10.0.0.5/cgi-bin/hitcount.exe?LogPath=' + LogFileDir + LogFilePath + '&RecordNo=' + RecordNo + '&User=' + User + '&Remark=' + Remark + '">');
+}
+
+// <img src="http://10.0.0.5/cgi-bin/hitcount.exe?LogPath=S:\MIS\GENERAL\LOGS\MIS-TEST&RecordNo=1&User=&Remark=">
+// if (LogFileProcessWin.images[0].complete)
+//  {
+//    LogFileProcessWin.close(); 
+//  }

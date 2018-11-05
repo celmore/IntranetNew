@@ -1,0 +1,10 @@
+body {
+}
+
+#comBG {
+  background-position: right;
+  background-image: url('http://aerocontrols.com/wp-content/uploads/2017/03/MEDIA-Communications-450x340.jpg');
+  background-repeat: no-repeat;
+  display: flex;
+  /*opacity: 0.4;*/
+}

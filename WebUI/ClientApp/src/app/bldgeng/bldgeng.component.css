@@ -1,0 +1,24 @@
+body {
+}
+
+.bldgeng {
+   background-image: url('../../assets/images.jpg');
+   background-repeat: no-repeat;
+   min-height: 65px;
+}
+
+.transbox {
+  /* background-color: #ffffff;
+    height: 50px;
+    opacity: 0.5;
+    filter: alpha(opacity=60);*/
+  /*padding: 25%;*/
+  position: absolute;
+}
+
+ 
+.transbox h1 {
+  color: navy;
+  font-weight: bold;
+padding-left: 65px;
+}
