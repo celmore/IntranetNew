@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'QA',
-  templateUrl: './QA.component.html'
+  templateUrl: './QA.component.html',
+  styleUrls: ['./QA.component.css']
 })
 export class QA_Inspestioncomponent {
   public Articles: articles[];

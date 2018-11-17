@@ -1,0 +1,6 @@
+body {
+}
+.rotated {
+  transform: rotate(35deg); /* Equal to rotateZ(45deg) */
+  background-color: pink;
+}

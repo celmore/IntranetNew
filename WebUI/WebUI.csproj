@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Mapster" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.1" />
@@ -20,20 +21,41 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\app\Business Development\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\app\Business Development\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\mis\quickFixes.component.ts" />
-    <None Remove="ClientApp\src\app\Purchasing\Purchase.component.ts" />
-    <None Remove="ClientApp\src\app\Purchasing\rawmat.component.ts" />
+    <EmbeddedResource Remove="ClientApp\src\app\Business Development\**" />
+    <None Remove="ClientApp\src\app\Business Development\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\Customer Service\CustomerService.component.ts" />
+    <None Remove="ClientApp\src\app\Engineers\Engineering.component.ts" />
+    <None Remove="ClientApp\src\app\home\help\help.component.ts" />
+    <None Remove="ClientApp\src\app\mis\quickFixes.component.ts" />
+    <None Remove="ClientApp\src\app\Purchasing\Purchase.component.ts" />
+    <None Remove="ClientApp\src\app\Purchasing\rawmat.component.ts" />
+    <None Remove="ClientApp\src\app\Sale\Sale.component.ts" />
+    <None Remove="ClientApp\src\app\Shipping\shipping.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\Customer Service\CustomerService.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Engineers\Engineering.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\help\help.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\mis\quickFixes.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Purchasing\Purchase.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Purchasing\rawmat.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Sale\Sale.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Shipping\shipping.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

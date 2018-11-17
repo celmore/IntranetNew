@@ -21,7 +21,7 @@ import { OtherResourcescomponent } from './OtherResources/OtherResources.compone
 import { TravelHelpcomponent } from './TravelHelp/TravelHelp.component';
 import { accountscomponent } from './Accounts/accounts.component';
 import { QA_Inspestioncomponent } from './QA/QA.component';
-import { masterlistcomponent } from './QA/MasterProcedureList/MasterProcedureList.component';
+import { masterlistcomponent } from './MasterProcedureList/MasterProcedureList.component';
 import { misComponent } from './mis/mis.component';
 import { bldgengcomponent } from './bldgeng/bldgeng.component';
 import { Payrollcomponent } from './ERC/Payroll/payroll.component';
@@ -29,6 +29,12 @@ import { WellnessComponent } from './ERC/wellness.component';
 import { ManagersComponent } from './ERC/Payroll/managers.component';
 import { quickFixesComponent } from './mis/quickFixes.component';
 import { Purchasecomponent } from './Purchasing/Purchase.component';
+import { RawMatcomponent } from './Purchasing/rawmat.component';
+import { shippingcomponent } from './Shipping/shipping.component';
+import { salecomponent } from './Sale/Sale.component';
+import { CustomerServicecomponent } from './Customer Service/CustomerService.component';
+//import { BusinessDevelopmentcomponent } from './BusinessDevelopment/BusinessDevelopment.component';
+import { Engineeringcomponent } from './Engineers/Engineering.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +62,13 @@ import { Purchasecomponent } from './Purchasing/Purchase.component';
     WellnessComponent,
     ManagersComponent,
     quickFixesComponent,
-    Purchasecomponent
+    Purchasecomponent,
+    RawMatcomponent,
+    shippingcomponent,
+    salecomponent,
+    CustomerServicecomponent,
+    //BusinessDevelopmentcomponent,
+    Engineeringcomponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -85,6 +97,12 @@ import { Purchasecomponent } from './Purchasing/Purchase.component';
       { path: 'Managers', component: ManagersComponent },
       { path: 'quickFixes', component: quickFixesComponent },
       { path: 'Purchasing', component: Purchasecomponent },
+      { path: 'RawMat', component: RawMatcomponent },
+      { path: 'shipping', component: shippingcomponent },
+      { path: 'Sale', component: salecomponent },
+      { path: 'CustomerService', component: CustomerServicecomponent },
+      //{ path: 'BusinessDevelopment', component: BusinessDevelopmentcomponent },
+      { path: 'Engineering', component: Engineeringcomponent },
       { path: '**', redirectTo: 'home' }
     ])
   ],

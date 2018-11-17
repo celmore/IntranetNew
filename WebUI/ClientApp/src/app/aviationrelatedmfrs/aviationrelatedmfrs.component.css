@@ -1,0 +1,13 @@
+.body-content {
+  min-height: 400px;
+}
+
+#comBG {
+  background-position: right;
+  background-image: url('../../assets/Aviation.jpg');
+  background-repeat: no-repeat;
+  background-size: 450px 340px;
+  display: flex;
+  /*opacity: 0.4;*/
+  min-height: 400px;
+}
