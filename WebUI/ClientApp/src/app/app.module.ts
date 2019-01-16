@@ -33,7 +33,11 @@ import { RawMatcomponent } from './Purchasing/rawmat.component';
 import { shippingcomponent } from './Shipping/shipping.component';
 import { salecomponent } from './Sale/Sale.component';
 import { CustomerServicecomponent } from './Customer Service/CustomerService.component';
+<<<<<<< HEAD
 //import { BusinessDevelopmentcomponent } from './BusinessDevelopment/BusinessDevelopment.component';
+=======
+import { BusinessDevelopmentcomponent } from './BusinessDevelopment/BusinessDevelopment.component';
+>>>>>>> intranet updates
 import { Engineeringcomponent } from './Engineers/Engineering.component';
 
 @NgModule({
@@ -67,7 +71,11 @@ import { Engineeringcomponent } from './Engineers/Engineering.component';
     shippingcomponent,
     salecomponent,
     CustomerServicecomponent,
+<<<<<<< HEAD
     //BusinessDevelopmentcomponent,
+=======
+    BusinessDevelopmentcomponent,
+>>>>>>> intranet updates
     Engineeringcomponent
   ],
   imports: [
@@ -101,7 +109,11 @@ import { Engineeringcomponent } from './Engineers/Engineering.component';
       { path: 'shipping', component: shippingcomponent },
       { path: 'Sale', component: salecomponent },
       { path: 'CustomerService', component: CustomerServicecomponent },
+<<<<<<< HEAD
       //{ path: 'BusinessDevelopment', component: BusinessDevelopmentcomponent },
+=======
+      { path: 'BusinessDevelopment', component: BusinessDevelopmentcomponent },
+>>>>>>> intranet updates
       { path: 'Engineering', component: Engineeringcomponent },
       { path: '**', redirectTo: 'home' }
     ])

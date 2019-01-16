@@ -4,7 +4,11 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'Engineering',
+<<<<<<< HEAD
   templateUrl: './Engineering.component.html'
+=======
+  templateUrl: './Engineering/Engineering.component.html'
+>>>>>>> intranet updates
 })
 export class Engineeringcomponent {
   //public Articles: articles[];
