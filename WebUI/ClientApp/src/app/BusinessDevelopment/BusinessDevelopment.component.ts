@@ -1,14 +1,18 @@
 import { Component, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 
 
 @Component({
   selector: 'BusinessDevelopment',
 <<<<<<< HEAD
+<<<<<<< HEAD
   templateUrl: './BusinessDevelopment/BusinessDevelopment.component.html'
 =======
   templateUrl: './Business Development/BusinessDevelopment.component.html'
 >>>>>>> intranet updates
+=======
+  templateUrl: './BusinessDevelopment.component.html'
+>>>>>>> Updated without errors
 })
 export class BusinessDevelopmentcomponent {
   //public Articles: articles[];
@@ -21,9 +25,9 @@ export class BusinessDevelopmentcomponent {
 
 }
 
-interface articles {
-  Id: number;
-  ArticleUrl: string;
-  Article: string;
-  Visible: boolean;
-}
+// interface articles {
+//   Id: number;
+//   ArticleUrl: string;
+//   Article: string;
+//   Visible: boolean;
+// }
