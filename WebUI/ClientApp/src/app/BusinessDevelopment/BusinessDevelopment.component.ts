@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-//import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -15,19 +15,19 @@ import { Component, Inject } from '@angular/core';
 >>>>>>> Updated without errors
 })
 export class BusinessDevelopmentcomponent {
-  //public Articles: articles[];
+  public articles: articles[];
 
-  //constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-  //  http.get<articles[]>(baseUrl + 'api/articles/10').subscribe(result => {
-  //    this.Articles = result;
-  //  }, error => console.error(error));
-  //}
+constructor(http: HttpClient, @Inject('base_url') baseurl: string) {
+    http.get<articles[]>(baseurl + 'api/articles/10').subscribe(result => {
+      this.articles = result;
+    }, error => console.error(error));
+  }
 
 }
 
-// interface articles {
-//   Id: number;
-//   ArticleUrl: string;
-//   Article: string;
-//   Visible: boolean;
-// }
+ interface articles {
+   id: number;
+   articleurl: string;
+   article: string;
+   visible: boolean;
+ }
