@@ -10,7 +10,7 @@ export class HomeComponent {
   public Articles: articles[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<articles[]>(baseUrl + '/api/Articles/4').subscribe(result => {
+    http.get<articles[]>(baseUrl + 'api/Articles/4').subscribe(result => {
       this.Articles = result;
     }, error => console.error(error));
   }

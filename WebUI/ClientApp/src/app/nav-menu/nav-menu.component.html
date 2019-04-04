@@ -16,6 +16,13 @@
           <a [routerLink]="['/home']">
             <span class='glyphicon glyphicon-dashboard'></span> Home
           </a>
+          <ul>
+            <li [routerLinkActive]="['link-active']">
+              <a [routerLink]="['/home/create']">
+                <span class='glyphicon glyphicon-log-in'></span> Create Article
+              </a>
+            </li>
+          </ul>
         </li>
         <li [routerLinkActive]="['link-active']">
           <a [routerLink]="['/aviationrelatedmfrs']">

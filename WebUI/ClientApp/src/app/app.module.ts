@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { ILSComponent } from './home/ils.component';
+import { ArticleListComponent } from './admin/sites/site-list.component';
+import { ArticleComponent } from './admin/sites/site.component';
+import { ArticleEditComponent } from './admin/sites/site-edit.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ReportsComponent } from './reports/reports.component';
@@ -45,6 +48,9 @@ import { Engineeringcomponent } from './Engineers/Engineering.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
+    ArticleListComponent,
+    ArticleComponent,
+    ArticleEditComponent,
     CounterComponent,
     FetchDataComponent,
     ReportsComponent,
@@ -84,6 +90,9 @@ import { Engineeringcomponent } from './Engineers/Engineering.component';
     FormsModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent, pathMatch: 'full' },
+      { path: 'sitelist', component: ArticleListComponent },
+      { path: 'site', component: ArticleComponent },
+      { path: 'admin/create', component: ArticleComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'reports', component: ReportsComponent },
