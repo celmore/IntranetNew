@@ -63,48 +63,10 @@ namespace WebUI.Controllers
                 });
         }
 
-
-        /// <summary>
-        /// Edit the article with given {id}
-        /// </summary>
-        /// <param name="model">The ArticleViewModel containing the data to update</param>
         // POST: api/Articles
         [HttpPost]
-        public IActionResult Post([FromBody]ArticlesViewModel model)
+        public void Post([FromBody] string value)
         {
-            // return generic HTTP status
-            if (model == null) return new StatusCodeResult(500);
-
-            // retrieve article to edit
-            var artcl = DbContext.Articles.Where(a => a.Id == model.Id).FirstOrDefault();
-
-            if (artcl == null)
-            {
-                return NotFound(new
-                {
-                    Error = String.Format("Article ID {0} has not been found",
-                     model.Id)
-                });
-            }
-
-            //artcl.SubArticles = model.SubArticle;
-            artcl.Article = model.Article;
-            artcl.ArticleUrl = model.ArticleUrl;
-
-            // Server-Side
-            artcl.LastModifiedDate = DateTime.Now;
-
-            // persist changes to DB
-            DbContext.SaveChanges();
-
-            // return updated data
-            return new JsonResult(artcl.Adapt<ArticlesViewModel>(),
-                new JsonSerializerSettings()
-                {
-                    Formatting = Formatting.Indented
-                });
-
-
         }
 
         // PUT: api/Articles/5
@@ -112,39 +74,10 @@ namespace WebUI.Controllers
         /// Adds a new Article to the Database.
         /// </summary>
         /// <param name="model">The ArticleViewModel containing the data to insert</param>
-        [HttpPut("{id}")]
-        public IActionResult Put([FromBody]ArticlesViewModel model)
-        {
-            if (model == null) return new StatusCodeResult(500);
-
-            //Insert
-            var artcl = new Articles();
-
-            artcl.Article = model.Article;
-            artcl.ArticleUrl = model.ArticleUrl;
-            artcl.Visible = model.Visible;
-            artcl.LastModifiedBy = model.LastModifiedBy;
-
-            //Server set properties
-            artcl.LastModifiedDate = DateTime.Now;
-            //artcl.User = DbContext.Users.Where(u => u.UserName).FirstOrDefault().Id;
-
-            // add the Article
-            DbContext.Articles.Add(artcl);
-            DbContext.SaveChanges();
-
-
-            // return the new article
-            return new JsonResult(artcl.Adapt<ArticlesViewModel>(),
-                new JsonSerializerSettings()
-                {
-                    Formatting = Formatting.Indented
-                });
-
-
-
-
-        }
+        //[HttpPut("{id}")]
+        //public IActionResult Put(int id, [FromBody] string value)
+        //{
+        //}
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]

@@ -27,8 +27,6 @@ namespace WebUI.Data.Models
         [MaxLength()]
         public string Article { get; set; }
 
-        public string SubArticle { get; set; }
-
         [DefaultValue(true)]
         public bool Visible { get; set; }
 
