@@ -51,10 +51,21 @@ namespace WebUI.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         // GET: api/Articles/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             var article = DbContext.Articles.Where(i => i.Id == id).FirstOrDefault();
+
+            // handle requests asking for non-existing articles
+            if(article == null)
+            {
+                return NotFound(new
+                {
+                    Error = String.Format("Data ID {0} has not been found",
+                    id)
+                });
+            }
+
             return new JsonResult(
                 article.Adapt<ArticlesViewModel>(),
                 new JsonSerializerSettings()
@@ -63,22 +74,90 @@ namespace WebUI.Controllers
                 });
         }
 
-        // POST: api/Articles
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
 
-        // PUT: api/Articles/5
         /// <summary>
         /// Adds a new Article to the Database.
         /// </summary>
         /// <param name="model">The ArticleViewModel containing the data to insert</param>
-        //[HttpPut("{id}")]
-        //public IActionResult Put(int id, [FromBody] string value)
-        //{
-        //}
+        // PUT: api/Articles
+        [HttpPut]
+        public IActionResult Put([FromBody]ArticlesViewModel model)
+        {
+            // http status 500 (Server Error)
+            if (model == null) return new StatusCodeResult(500);
 
+            var artc = new Articles();
+
+            // Properties
+            artc.Article_text = model.Article_text;
+            artc.ArticleMid = model.ArticleMid;
+            artc.Article_Btm = model.Article_Btm;
+            artc.ArticleUrl = model.ArticleUrl;
+            artc.LastModifiedDate = DateTime.Now;
+            artc.LastModifiedBy = "CE1";
+
+            // Add to db
+            DbContext.Articles.Add(artc);
+            _ = DbContext.SaveChanges();
+
+            // Return
+            return new JsonResult(artc.Adapt<ArticlesViewModel>(),
+                new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented
+                });
+
+        }
+
+        /// <summary>
+        /// Edit site data
+        /// </summary>
+        /// <param name="value"></param>
+        // POST: api/Articles
+        [HttpPost]
+        public IActionResult Post([FromBody]ArticlesViewModel model)
+        {
+            // http status 500 (Server Error)
+            if (model == null) return new StatusCodeResult(500);
+
+            // retrieve article by {id} to edit
+            var artc = DbContext.Articles.Where(a => a.Id == model.Id).FirstOrDefault();
+
+            // handle requests asking for non-existing articles
+            if (artc == null)
+            {
+                return NotFound(new
+                {
+                    Error = String.Format("Data ID {0} has not been found",
+                    model.Id)
+                });
+            }
+
+            // handle maping
+            artc.Article_text = model.Article_text;
+            artc.ArticleMid = model.ArticleMid;
+            artc.Article_Btm = model.Article_Btm;
+            artc.ArticleUrl = model.ArticleUrl;
+
+            artc.LastModifiedDate = DateTime.Now;
+
+            // persist changes
+            _ = DbContext.SaveChangesAsync();
+
+            return new JsonResult(artc.Adapt<ArticlesViewModel>(),
+                new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented
+                });
+
+        }
+
+      
+        
+        /// <summary>
+        /// Deletes the Article with the given {id} from db
+        /// </summary>
+        /// <param name="id"></param>
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)

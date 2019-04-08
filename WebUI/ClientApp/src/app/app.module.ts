@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
+import { ArticleEditComponent } from './home/Admin/article-edit.component'
 import { ILSComponent } from './home/ils.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
@@ -33,18 +34,18 @@ import { RawMatcomponent } from './Purchasing/rawmat.component';
 import { shippingcomponent } from './Shipping/shipping.component';
 import { salecomponent } from './Sale/Sale.component';
 import { CustomerServicecomponent } from './Customer Service/CustomerService.component';
-<<<<<<< HEAD
-//import { BusinessDevelopmentcomponent } from './BusinessDevelopment/BusinessDevelopment.component';
-=======
-import { BusinessDevelopmentcomponent } from './BusinessDevelopment/BusinessDevelopment.component';
->>>>>>> intranet updates
+import { BusinessDevelopmentcomponent } from './BusinessDevelopment/BusinessDevelopment.component';//>>>>>>> intranet updates
 import { Engineeringcomponent } from './Engineers/Engineering.component';
+//import { BusinessDevelopmentcomponent } from './BusinessDevelopment/BusinessDevelopment.component';
+//import { Engineeringcomponent } from './Engineers/Engineering.component';
+//>>>>>>> Fixed data issue w/adding interface -article class
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
+    ArticleEditComponent,
     CounterComponent,
     FetchDataComponent,
     ReportsComponent,
@@ -71,12 +72,13 @@ import { Engineeringcomponent } from './Engineers/Engineering.component';
     shippingcomponent,
     salecomponent,
     CustomerServicecomponent,
-<<<<<<< HEAD
+//<<<<<<< HEAD
     //BusinessDevelopmentcomponent,
-=======
-    BusinessDevelopmentcomponent,
->>>>>>> intranet updates
     Engineeringcomponent
+//=======
+   // BusinessDevelopmentcomponent,
+   // Engineeringcomponent
+//>>>>>>> Fixed data issue w/adding interface -article class
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -84,6 +86,8 @@ import { Engineeringcomponent } from './Engineers/Engineering.component';
     FormsModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent, pathMatch: 'full' },
+      { path: 'Admin/create', component: ArticleEditComponent },
+      { path: 'Admin/edit/:id', component: ArticleEditComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'reports', component: ReportsComponent },
@@ -109,12 +113,13 @@ import { Engineeringcomponent } from './Engineers/Engineering.component';
       { path: 'shipping', component: shippingcomponent },
       { path: 'Sale', component: salecomponent },
       { path: 'CustomerService', component: CustomerServicecomponent },
-<<<<<<< HEAD
+///<<<<<<< HEAD
       //{ path: 'BusinessDevelopment', component: BusinessDevelopmentcomponent },
-=======
-      { path: 'BusinessDevelopment', component: BusinessDevelopmentcomponent },
->>>>>>> intranet updates
       { path: 'Engineering', component: Engineeringcomponent },
+//=======
+      //{ path: 'BusinessDevelopment', component: BusinessDevelopmentcomponent },
+      //{ path: 'Engineering', component: Engineeringcomponent },
+//>>>>>>> Fixed data issue w/adding interface -article class
       { path: '**', redirectTo: 'home' }
     ])
   ],

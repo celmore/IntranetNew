@@ -20,12 +20,20 @@ namespace WebUI.Data.Models
         [Required]
         public int Id { get; set; }
 
+        public string Title { get; set; }
+
         [Required]
         public string ArticleUrl { get; set; }
 
         [Required]
-        [MaxLength()]
-        public string Article { get; set; }
+        public string Article_text { get; set; }
+
+        [MaxLength(4000)]
+        public string ArticleMid { get; set; }
+
+        [MaxLength(4000)]
+        public string Article_Btm { get; set; }
+
 
         [DefaultValue(true)]
         public bool Visible { get; set; }

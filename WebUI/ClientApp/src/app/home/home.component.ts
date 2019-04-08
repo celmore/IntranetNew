@@ -7,19 +7,19 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  public Articles: articles[];
+  public Articles: article[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<articles[]>(baseUrl + '/api/Articles/4').subscribe(result => {
+    http.get<article[]>(baseUrl + 'api/Articles/4').subscribe(result => {
       this.Articles = result;
     }, error => console.error(error));
   }
 }
 
-interface articles {
+interface article {
   Id: number;
   ArticleUrl: string;
-  Article: string;
+  Article_text: string;
   Visible: boolean;
 
 }
