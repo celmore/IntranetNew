@@ -18,8 +18,7 @@ export class HomeComponent {
 
 interface article {
   Id: number;
-  ArticleUrl: string;
-  Article_text: string;
-  Visible: boolean;
-
+    Title: string;
+    ArticleUrl: string;
+    Article_text: string;
 }

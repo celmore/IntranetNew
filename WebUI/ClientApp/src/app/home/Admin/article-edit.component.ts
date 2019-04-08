@@ -65,5 +65,9 @@ export class ArticleEditComponent {
     this.router.navigate(["home"]);
   }
 
+  onEdit() {
+    this.router.navigate(["admin/edit", this.article.Id]);
+  }
+
 }
 

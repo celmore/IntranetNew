@@ -7,19 +7,22 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './Accounts.component.html'
 })
 export class accountscomponent {
-  public Articles: articles[];
+  public Articles: article[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<articles[]>(baseUrl + 'api/articles/10').subscribe(result => {
+    http.get<article[]>(baseUrl + 'api/Articles/13').subscribe(result => {
       this.Articles = result;
     }, error => console.error(error));
   }
 
 }
 
-interface articles {
+interface article {
   Id: number;
-  ArticleUrl: string;
-  Article: string;
-  Visible: boolean;
+    Title: string;
+    ArticleUrl: string;
+    Article_text: string;
 }
+
+
+

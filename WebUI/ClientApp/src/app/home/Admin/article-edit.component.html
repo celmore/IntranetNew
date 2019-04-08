@@ -1,2 +1,24 @@
-<h2>{{article.Title}}</h2>
-edit
+
+<h2>{{Title}}</h2>
+<div class="article-edit">
+<div>
+        <label>Title: </label><br />
+        <input [(ngModel)]="article.Title" placeholder="Insert the Title..." />
+    </div>
+<div>
+        <label>
+            Page Data:
+        </label><br/>
+        <textarea id="text" [(ngModel)]="article.Article_text" placeholder="Insert your Data..." cols="125" rows="50" class="angular-with-newlines" ></textarea>
+</div>
+<div>
+    <label for="text">Page URL:</label>
+    <br/>
+    <textarea [(ngModel)]="article.ArticleUrl" placeholder="enter url"></textarea>
+</div>
+<div>
+    <input *ngIf="editMode" type="button" value="Apply Changes" (click)="onSubmit(article)" />
+    <input *ngIf="!editMode" type="button" value="Create the page data." (click)="onSubmit(article)" />
+    <input type="button" value="Cancel" (click)="onBack()" />
+</div>
+</div>

@@ -89,6 +89,7 @@ namespace WebUI.Controllers
             var artc = new Articles();
 
             // Properties
+            artc.Title = model.Title;
             artc.Article_text = model.Article_text;
             artc.ArticleMid = model.ArticleMid;
             artc.Article_Btm = model.Article_Btm;
@@ -134,6 +135,7 @@ namespace WebUI.Controllers
             }
 
             // handle maping
+            artc.Title = model.Title;
             artc.Article_text = model.Article_text;
             artc.ArticleMid = model.ArticleMid;
             artc.Article_Btm = model.Article_Btm;
