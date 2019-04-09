@@ -54,7 +54,7 @@ namespace WebUI.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var article = DbContext.Articles.Where(i => i.Id == id).FirstOrDefault();
+            var article = DbContext.Articles.Where(i => i.Id == id).Where(a => a.isDeleted ==false).FirstOrDefault();
 
             // handle requests asking for non-existing articles
             if(article == null)
@@ -89,6 +89,7 @@ namespace WebUI.Controllers
             var artc = new Articles();
 
             // Properties
+            
             artc.Title = model.Title;
             artc.Article_text = model.Article_text;
             artc.ArticleMid = model.ArticleMid;
@@ -135,11 +136,13 @@ namespace WebUI.Controllers
             }
 
             // handle maping
-            artc.Title = model.Title;
+             artc.Title = model.Title;
             artc.Article_text = model.Article_text;
             artc.ArticleMid = model.ArticleMid;
             artc.Article_Btm = model.Article_Btm;
             artc.ArticleUrl = model.ArticleUrl;
+            
+            artc.LastModifiedBy = "CE1";
 
             artc.LastModifiedDate = DateTime.Now;
 

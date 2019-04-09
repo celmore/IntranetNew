@@ -7,13 +7,13 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './Engineering.component.html'
 })
 export class Engineeringcomponent {
-  //public Articles: articles[];
+  // public articles: articles[];
 
-  //constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-  //  http.get<articles[]>(baseUrl + 'api/articles/10').subscribe(result => {
-  //    this.Articles = result;
+  // constructor(http: httpclient, @inject('base_url') baseurl: string) {
+  //  http.get<articles[]>(baseurl + 'api/articles/10').subscribe(result => {
+  //    this.articles = result;
   //  }, error => console.error(error));
-  //}
+  // }
 
 }
 

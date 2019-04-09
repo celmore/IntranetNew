@@ -5,16 +5,30 @@
         <label>Title: </label><br />
         <input [(ngModel)]="article.Title" placeholder="Insert the Title..." />
     </div>
+   
 <div>
         <label>
             Page Data:
         </label><br/>
-        <textarea id="text" [(ngModel)]="article.Article_text" placeholder="Insert your Data..." cols="125" rows="50" class="angular-with-newlines" ></textarea>
+        <textarea id="text" [(ngModel)]="article.Article_text" placeholder="Insert your Data..." cols="125" rows="25" class="angular-with-newlines" ></textarea>
+</div>
+<div>
+        <label>
+          Middle  Page Data:
+        </label><br/>
+        <textarea id="text" [(ngModel)]="article.ArticleMid" placeholder="Insert your Data..." cols="125" rows="25" class="angular-with-newlines" ></textarea>
+</div>
+<div>
+        <label>
+           Bottom Page Data:
+        </label><br/>
+        <textarea id="text" [(ngModel)]="article.Article_Btm" placeholder="Insert your Data..." cols="125" rows="25" class="angular-with-newlines" ></textarea>
 </div>
 <div>
     <label for="text">Page URL:</label>
     <br/>
     <textarea [(ngModel)]="article.ArticleUrl" placeholder="enter url"></textarea>
+    Delete? <input *ngIf="editMode" type="checkbox" [(ngModel)]="article.isDeletec" name="isDeleted"/>
 </div>
 <div>
     <input *ngIf="editMode" type="button" value="Apply Changes" (click)="onSubmit(article)" />

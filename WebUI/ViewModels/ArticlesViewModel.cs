@@ -17,7 +17,8 @@ namespace WebUI.ViewModels
         [Required]
         public string ArticleUrl { get; set; }
 
-        public string Title { get; set; }
+        [MaxLength(30)]
+        public string Title { get; set; } 
 
         [Required]
        // [MaxLength()]
